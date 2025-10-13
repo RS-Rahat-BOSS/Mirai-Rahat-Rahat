@@ -4,7 +4,7 @@ const fs = require("fs-extra");
 const moment = require("moment-timezone");
 
 module.exports.config = {
- name: "info",
+ name: "info100",
  version: "1.0.0",
  hasPermssion: 0,
  credits: "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐈𝐬𝐥𝐚𝐦",
