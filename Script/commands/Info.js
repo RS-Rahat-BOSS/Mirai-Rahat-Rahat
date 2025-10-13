@@ -3,7 +3,7 @@ const moment = require("moment-timezone");
 const path = require("path");
 
 module.exports.config = {
- name: "info1",
+ name: "info",
  version: "1.0.1",
  hasPermssion: 0,
  credits: "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐈𝐬𝐥𝐚𝐦 + GPT-5",
