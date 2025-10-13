@@ -39,6 +39,6 @@ module.exports.run = async function({ api, event }) {
  }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.jpg"));
 
  return request("https://i.imgur.com/FJI61jS.jpeg")
- .pipe(fs.createWriteStream(__dirname + '/cache/owner.jpg'))
+ .pipe(fs.createWriteStream(__dirname + '/cache/owner.png'))
  .on('close', () => callback());
 };
