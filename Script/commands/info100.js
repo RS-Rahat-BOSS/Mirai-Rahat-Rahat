@@ -1,23 +1,24 @@
+const axios = require("axios");
 const request = require("request");
 const fs = require("fs-extra");
 const moment = require("moment-timezone");
 
 module.exports.config = {
-  name: "info100",
-  version: "1.0.2",
-  hasPermssion: 0,
-  credits: "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐈𝐬𝐥𝐚𝐦",
-  description: "Show Owner Info with Permanent GIF",
-  commandCategory: "info",
-  usages: "info",
-  cooldowns: 2
+ name: "info",
+ version: "1.0.0",
+ hasPermssion: 0,
+ credits: "𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐈𝐬𝐥𝐚𝐦",
+ description: "Show Info",
+ commandCategory: "info",
+ usages: "info",
+ cooldowns: 2
 };
 
 module.exports.run = async function({ api, event }) {
-  const time = moment().tz("Asia/Dhaka").format("DD/MM/YYYY hh:mm:ss A");
+ const time = moment().tz("Asia/Dhaka").format("DD/MM/YYYY hh:mm:ss A");
 
-  const callback = () => api.sendMessage({
-    body: `
+ const callback = () => api.sendMessage({
+  body: `
 ┏━━━━━━━━━━━━━━━┓
 ┃   🌟 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 🌟    
 ┣━━━━━━━━━━━━━━━┫
@@ -33,12 +34,12 @@ module.exports.run = async function({ api, event }) {
 ┃🌐 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 : https://www.facebook.com/profile.php?id=100083241262207
 ┣━━━━━━━━━━━━━━━┫
 ┃ 🕒 𝗨𝗣𝗗𝗔𝗧𝗘𝗗 𝗧𝗜𝗠𝗘: ${time}
-┗━━━━━━━━━━━━━━━┛`,
-    attachment: fs.createReadStream(__dirname + "/cache/owner.gif")
-  }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.gif"));
+┗━━━━━━━━━━━━━━━┛ `,
+  attachment: fs.createReadStream(__dirname + "/cache/owner.gif")
+ }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.gif"));
 
-  // 🔹 Permanent GIF link from Catbox.moe
-  return request("https://files.catbox.moe/qhajtf.gif")
-    .pipe(fs.createWriteStream(__dirname + '/cache/owner.gif'))
-    .on('close', () => callback());
+ // এখানে ভিডিও লিঙ্কটা mp4 ফরম্যাটে সেভ হবে
+ return request("https://i.imgur.com/OYPkFO3.gif")
+ .pipe(fs.createWriteStream(__dirname + '/cache/owner.gif'))
+ .on('close', () => callback());
 };
