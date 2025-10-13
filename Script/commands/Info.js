@@ -35,10 +35,10 @@ module.exports.run = async function({ api, event }) {
 ┣━━━━━━━━━━━━━━━┫
 ┃ 🕒 𝗨𝗣𝗗𝗔𝗧𝗘𝗗 𝗧𝗜𝗠𝗘: ${time}
 ┗━━━━━━━━━━━━━━━┛ `,
- attachment: fs.createReadStream(__dirname + "/cache/owner.jpg")
- }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.jpg"));
+ attachment: fs.createReadStream(__dirname + "/cache/owner.gif")
+ }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/owner.gif"));
 
  return request("https://i.imgur.com/FJI61jS.jpeg")
- .pipe(fs.createWriteStream(__dirname + '/cache/owner.png'))
+ .pipe(fs.createWriteStream(__dirname + '/cache/owner.gif'))
  .on('close', () => callback());
 };
