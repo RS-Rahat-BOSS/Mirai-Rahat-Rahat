@@ -11,8 +11,8 @@ module.exports.config = {
     usages: "[command name/category/page]",
     cooldowns: 5,
     envConfig: {
-        autoUnsend: true,
-        delayUnsend: 25
+        autoUnsend: false,
+        delayUnsend: 180
     }
 };
 
@@ -158,7 +158,7 @@ function sendHelpInfo(api, threadID, messageID, args, getText, prefix, commands)
 
     text += `
 ╭─────────────◊
-│⚙ Prefix:${prefix}
+│⚙ Prefix:👉🏻${prefix}
 │👑 Owner👉 m.me/61581900625860
 │「 🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰 」
 ╰─────────────◊ `;
