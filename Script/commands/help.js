@@ -158,12 +158,10 @@ function sendHelpInfo(api, threadID, messageID, args, getText, prefix, commands)
 
     text += `
 ╭─────────────◊
-│ 💡 Tips:
-│ • ${prefix}help <cmd>
-│ • ${prefix}help | <category>
-│👑 Owner👉 m.me/61561511477968
-╰─────────────◊
-        「 🔰${global.config.BOTNAME || "𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁"}🔰 」`;
+│⚙ Prefix:${prefix}
+│👑 Owner👉 m.me/61581900625860
+│「 🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰 」
+╰─────────────◊ `;
 
     api.sendMessage({ body: text, attachment: getVideoAttachment() }, threadID, (err, info) => {
         if (err) return console.error(err);
